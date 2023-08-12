@@ -11,24 +11,15 @@ export default {
     themes: [
       {
         mytheme: {
-        
-"primary": "#c084fc",
-        
-"secondary": "#5eead4",
-        
-"accent": "#fde047",
-        
-"neutral": "#121c21",
-        
-"base-100": "#1e1b4b",
-        
-"info": "#a5f3fc",
-        
-"success": "#a7f3d0",
-        
-"warning": "#fef08a",
-        
-"error": "#fecaca",
+          "primary": "#f0abfc",
+          "secondary": "#5eead4",
+          "accent": "#fde047",
+          "neutral": "#211e2a",
+          "base-100": "#312e81",
+          "info": "#a5f3fc",
+          "success": "#a7f3d0",
+          "warning": "#fde68a",
+          "error": "#fecaca",
         },
       },
     ],
