@@ -39,158 +39,167 @@ import{
   MedicineHatRegionalHospital,
   
 } from '../pages'
+import HomeLayout from '../pages/HomeLayout'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <CitySelection />,
+    element: <HomeLayout />,
     children: [
-      // {
-      //   index: true,
-      //   element: <Landing />,
-      // },
       {
-        path: 'calgary',
-        element: <CalgaryServiceSelection />,
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path:'citySelection',
+        element: <CitySelection />,
         children: [
           {
-            path: 'emergency',
-            element: <CalgaryEmergency />,
+            path: 'calgary',
+            element: <CalgaryServiceSelection />,
             children: [
               {
-                path: 'albertaChildrensHospital',
-                element: <AlbertaChildrensHospital />
+                path: 'emergency',
+                element: <CalgaryEmergency />,
+                children: [
+                  {
+                    path: 'albertaChildrensHospital',
+                    element: <AlbertaChildrensHospital />
+                  },
+                  {
+                    path: 'foothillsMedicalCentre',
+                    element: <FoothillsMedicalCentre />
+                  },
+                  {
+                    path: 'peterLougheedCentre',
+                    element: <PeterLougheedCentre />
+                  },
+                  {
+                    path: 'rockyviewGeneralHospital',
+                    element: <RockyviewGeneralHospital />
+                  },
+                  {
+                    path: 'southHealthCampus',
+                    element: <SouthHealthCampus />
+                  },
+                ],
               },
               {
-                path: 'foothillsMedicalCentre',
-                element: <FoothillsMedicalCentre />
-              },
-              {
-                path: 'peterLougheedCentre',
-                element: <PeterLougheedCentre />
-              },
-              {
-                path: 'rockyviewGeneralHospital',
-                element: <RockyviewGeneralHospital />
-              },
-              {
-                path: 'southHealthCampus',
-                element: <SouthHealthCampus />
+                path: 'urgentCare',
+                element: <CalgaryUrgentCare />,
+                children: [
+                  {
+                    path: 'airdrieCommunityHealthCentre',
+                    element: <AirdrieCommunityHealthCentre />
+                  },
+                  {
+                    path: 'sheldonMChumirCentre',
+                    element: <SheldonMChumirCentre />
+                  },
+                  {
+                    path: 'southCalgaryHealthCentre',
+                    element: <SouthCalgaryHealthCentre />
+                  },
+                  {
+                    path: 'cochraneCommunityHealthCentre',
+                    element: <CochraneCommunityHealthCentre />
+                  },
+                  {
+                    path: 'okotoksHealthAndWellnessCentre',
+                    element: <OkotoksHealthAndWellnessCentre />
+                  },
+                ],
               },
             ],
           },
           {
-            path: 'urgentCare',
-            element: <CalgaryUrgentCare />,
+            path: 'edmonton',
+            element: <EdmontonHospitalSelection />,
             children: [
               {
-                path: 'airdrieCommunityHealthCentre',
-                element: <AirdrieCommunityHealthCentre />
+                path: 'devonGeneralHospital',
+                element: <DevonGeneralHospital />
               },
               {
-                path: 'sheldonMChumirCentre',
-                element: <SheldonMChumirCentre />
+                path: 'fortSaskCommunityHospital',
+                element: <FortSaskCommunityHospital />
               },
               {
-                path: 'southCalgaryHealthCentre',
-                element: <SouthCalgaryHealthCentre />
+                path: 'greyNunsCommunityHospital',
+                element: <GreyNunsCommunityHospital />
               },
               {
-                path: 'cochraneCommunityHealthCentre',
-                element: <CochraneCommunityHealthCentre />
+                path: 'leducCommunityHospital',
+                element: <LeducCommunityHospital />
               },
               {
-                path: 'okotoksHealthAndWellnessCentre',
-                element: <OkotoksHealthAndWellnessCentre />
+                path: 'misericordiaCommunityHospital',
+                element: <MisericordiaCommunityHospital />
+              },
+              {
+                path: 'northeastCommunityHealthCentre',
+                element: <NortheastCommunityHealthCentre />
+              },
+              {
+                path: 'royalAlexandraHospital',
+                element: <RoyalAlexandraHospital />
+              },
+              {
+                path: 'stolleryChildrensHospital',
+                element: <StolleryChildrensHospital />
+              },
+              {
+                path: 'srathconaCommunityHospital',
+                element: <StrathconaCommunityHospital />
+              },
+              {
+                path: 'sturgeonCommunityHospital',
+                element: <SturgeonCommunityHospital />
+              },
+              {
+                path: 'universityOfAlbertaHospital',
+                element: <UniversityOfAlbertaHospital />
+              },
+              {
+                path: 'westViewHealthCentre',
+                element: <WestViewHealthCentre />
               },
             ],
           },
-        ],
-      },
-      {
-        path: 'edmonton',
-        element: <EdmontonHospitalSelection />,
-        children: [
           {
-            path: 'devonGeneralHospital',
-            element: <DevonGeneralHospital />
+            path: 'redDeer',
+            element: <RedDeerHospitalSelection />,
+            children: [
+              {
+                path: 'redDeerRegionalHospital',
+                element: <RedDeerRegionalHospital />,
+              },
+              {
+                path: 'innisfailHealthCentre',
+                element: <InnisfailHealthCentre />,
+              },
+              {
+                path: 'lacombeHospitalAndCareCentre',
+                element: <LacombeHospitalAndCareCentre />,
+              },
+            ]
           },
           {
-            path: 'fortSaskCommunityHospital',
-            element: <FortSaskCommunityHospital />
+            path: 'grandePrairie',
+            element: <GrandePrairieRegionalHospital  />
           },
           {
-            path: 'greyNunsCommunityHospital',
-            element: <GreyNunsCommunityHospital />
+            path: 'lethbridge',
+            element: <ChinookRegionalHospital  />
           },
           {
-            path: 'leducCommunityHospital',
-            element: <LeducCommunityHospital />
+            path: 'medicineHat	',
+            element: <MedicineHatRegionalHospital  />
           },
-          {
-            path: 'misericordiaCommunityHospital',
-            element: <MisericordiaCommunityHospital />
-          },
-          {
-            path: 'northeastCommunityHealthCentre',
-            element: <NortheastCommunityHealthCentre />
-          },
-          {
-            path: 'royalAlexandraHospital',
-            element: <RoyalAlexandraHospital />
-          },
-          {
-            path: 'stolleryChildrensHospital',
-            element: <StolleryChildrensHospital />
-          },
-          {
-            path: 'srathconaCommunityHospital',
-            element: <StrathconaCommunityHospital />
-          },
-          {
-            path: 'sturgeonCommunityHospital',
-            element: <SturgeonCommunityHospital />
-          },
-          {
-            path: 'universityOfAlbertaHospital',
-            element: <UniversityOfAlbertaHospital />
-          },
-          {
-            path: 'westViewHealthCentre',
-            element: <WestViewHealthCentre />
-          },
-        ],
-      },
-      {
-        path: 'redDeer',
-        element: <RedDeerHospitalSelection />,
-        children: [
-          {
-            path: 'redDeerRegionalHospital',
-            element: <RedDeerRegionalHospital />,
-          },
-          {
-            path: 'innisfailHealthCentre',
-            element: <InnisfailHealthCentre />,
-          },
-          {
-            path: 'lacombeHospitalAndCareCentre',
-            element: <LacombeHospitalAndCareCentre />,
-          },
+
         ]
       },
-      {
-        path: 'grandePrairie',
-        element: <GrandePrairieRegionalHospital  />
-      },
-      {
-        path: 'lethbridge',
-        element: <ChinookRegionalHospital  />
-      },
-      {
-        path: 'medicineHat	',
-        element: <MedicineHatRegionalHospital  />
-      },
+      
     ]
   }
 ])
