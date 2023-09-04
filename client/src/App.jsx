@@ -193,7 +193,7 @@ const router = createBrowserRouter([
             element: <ChinookRegionalHospital  />
           },
           {
-            path: 'medicineHat	',
+            path: 'medicineHat',
             element: <MedicineHatRegionalHospital  />
           },
 
