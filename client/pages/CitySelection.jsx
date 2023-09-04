@@ -16,9 +16,9 @@ const handleCityVisibiluty = () => {
 
   return (
 
-    <div className='container flex flex-col mx-auto text-center'>
+    <div className='container flex flex-col mx-auto text-center my-8'>
     <h1
-     className=' mt-12 text-4xl lg:text-7xl xl:text-8xl py-4 pt-4 font-bold text-center'>
+     className={`${selectionVisibility ? ' mt-12 text-4xl lg:text-7xl xl:text-8xl py-4 pt-4 font-bold text-center' : 'hidden'}`}>
     Choose <span className='text-secondary'>the City</span> in Alberta
     </h1>
 
