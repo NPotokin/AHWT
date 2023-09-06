@@ -40,6 +40,7 @@ import{
   
 } from '../pages'
 import HomeLayout from '../pages/HomeLayout'
+import CalgaryEmergencyFacilities from '../pages/calgary/CalgaryEmergency'
 
 const router = createBrowserRouter([
   {
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
             children: [
               {
                 path: 'emergency',
-                element: <CalgaryEmergency />,
+                element: <CalgaryEmergencyFacilities />,
                 children: [
                   {
                     path: 'albertaChildrensHospital',
