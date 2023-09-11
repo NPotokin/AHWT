@@ -26,23 +26,23 @@ const CalgaryUrgentCare = () => {
       </div>
 
       <h1
-        className={`${urgentCareSelection? ' mt-12 text-4xl lg:text-7xl xl:text-8xl py-4 pt-4 font-bold text-center' :  'hidden'}`}>
+        className={`${urgentCareSelection? 'mx-3 mt-12 text-4xl lg:text-7xl xl:text-8xl py-4 pt-4 font-bold text-center' :  'hidden'}`}>
        <span className='text-secondary'>Urgent Care</span> Service Selection
       </h1>
 
-      <div className={`${urgentCareSelection? 'grid grid-cols-1 lg:grid-cols-3 gap-12' : 'hidden'}`}>
+      <div className={`${urgentCareSelection? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3' : 'hidden'}`}>
         
       {CalgaryUrgent.map((item) => (
           <div 
-          id={item.id}
-          className='container relative my-2 border-4 border-secondary rounded-3xl group hover:border-primary duration-1000'>
+          key={item.key}
+          className='w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] mx-auto  relative my-2 border-4 border-secondary rounded-3xl group hover:border-primary duration-1000'>
           <img 
             src={item.img} 
             alt="" 
-            className="object-cover rounded-3xl bg-primary opacity-30" />
+            className="w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] object-cover rounded-3xl bg-primary opacity-30" />
           <div className="w-3/4 absolute  top-[50%] left-[50%] translate-x-[-50%] 
               translate-y-[-50%] ">
-              <h1 className='py-1 md:text-lg lg:text-3xl font-semibold text-secondary group-hover:text-primary duration-1000'>{item.name}</h1>
+              <h1 className='py-1 md:text-xl xl:text-3xl font-semibold text-secondary group-hover:text-primary duration-1000'>{item.name}</h1>
               <h1 className='py-1 mb-4 text-justify md:text-md lg:text-lg font-medium'>{item.info}</h1>
               <Link 
               onClick={handleUrgentCareSelection}

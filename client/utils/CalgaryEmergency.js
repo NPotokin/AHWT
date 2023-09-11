@@ -2,7 +2,7 @@ const CalgaryEmergency = [
     {
         key: 'caEm1',
         name: 'Alberta Childrens Hospital',
-        info: 'This facility provides a range of healthcare services for children up to 18 years old including a 24/7 emergency department.',
+        info: 'This facility provides a range of healthcare services for children up to 18 years old.',
         img: 'https://childrenshospitals.ca/wp-content/uploads/2019/03/achf2.jpg',
         route: 'albertaChildrensHospital',
     },

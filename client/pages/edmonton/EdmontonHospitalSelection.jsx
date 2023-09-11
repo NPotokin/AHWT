@@ -30,19 +30,19 @@ const handleEdmonton = () => {
       </h1>
 
 
-        <div className={`${edmontonHospitalSelection? 'grid md:grid-cols-2 lg:grid-cols-3 gap-12' : 'hidden' }`}>
+        <div className={`${edmontonHospitalSelection? 'mx-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3' : 'hidden' }`}>
           
         {EdmontonHospitals.map((item) => (
           <div 
-            id={item.id}
-            className='container relative my-2 border-4 border-secondary rounded-3xl group hover:border-primary duration-1000'>
+            key={item.key}
+            className='w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] mx-auto container relative my-2 border-4 border-secondary rounded-3xl group hover:border-primary duration-1000'>
             <img 
               src={item.img} 
               alt="" 
-              className="object-cover rounded-3xl bg-primary opacity-30" />
+              className="w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] mx-auto object-cover rounded-3xl bg-primary opacity-30" />
             <div className="w-3/4 absolute  top-[50%] left-[50%] translate-x-[-50%] 
                 translate-y-[-50%] ">
-                <h1 className='py-1 md:text-lg lg:text-3xl font-semibold text-secondary group-hover:text-primary duration-1000'>{item.name}</h1>
+                <h1 className='py-1 md:text-lg lg:text-2xl font-semibold text-secondary group-hover:text-primary duration-1000'>{item.name}</h1>
                 <h1 className='py-1 mb-4 text-justify md:text-md lg:text-lg font-medium'>{item.info}</h1>
                 <Link 
                 onClick={handleEdmonton}

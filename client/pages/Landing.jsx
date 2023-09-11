@@ -31,37 +31,43 @@ const Landing = () => {
               our 3-step  <span className='text-secondary'>tutorial</span></h1>
 
 
-            <div className="flex flex-row">
-              <div className='flex flex-col'>
-                <h1 className='my-10 text-xl lg:text-4xl xl:text-5xl font-extrabold '>
+            <div className="flex flex-col md:flex-row mx-3">
+              <div className='flex flex-col my-3 mx-3'>
+                <h1 className='my-3 text-xl lg:text-4xl xl:text-5xl font-extrabold '>
                   <span className='text-primary'>STEP 1.</span> Chose the City</h1>
-                  <p className='text-md leading-normal lg:text-2xl xl:text-3xl font-semibold  max-w-[700px] text-justify'>
+                  <p className='text-md leading-normal lg:text-2xl xl:text-3xl font-semibold text-justify'>
                     We collect information about six major cities of Alberta: Calgary, Edmomton, Red Deer, Grande Praierie, Lethbridge and Medicine Hat. For information about hospitals in Calgary and Edmomton areas please refer to the city pages. 
                   </p>
               </div>
-              <div className='p-20 m-20'>image</div>
+              <img 
+                src='../assets/citySelection.jpg'
+                className='w-[300px] h-[300px] mx-auto border-4 rounded-3xl border-primary' />
             </div>
 
-            <div className="flex flex-row">
-              <div className='p-20 m-20'>image</div>
-              <div className='flex flex-col'>
-                <h1 className='my-10 text-xl lg:text-4xl xl:text-5xl font-extrabold '>
+            <div className="flex flex-col md:flex-row-reverse mx-3">
+              <div className='flex flex-col my-3 mx-3'>
+                <h1 className='my-3 text-xl lg:text-4xl xl:text-5xl font-extrabold '>
                   <span className='text-secondary'>STEP 2.</span> Chose the Service</h1>
-                  <p className='text-md leading-normal lg:text-2xl xl:text-3xl font-semibold  max-w-[700px] text-justify'>
+                  <p className='text-md leading-normal lg:text-2xl xl:text-3xl font-semibold text-justify'>
                     Most Cities will give you the selection of Medical Facilities right away. For Calgary, however, there is some distinction. Based on your needs and condition you could either go fot Emergency in case there is a real dander to your life, or Urgent Care for less severe conditions. 
                   </p>
               </div>
+              <img 
+                src='../assets/serviceSelection.jpg'
+                className='w-[300px] h-[300px] border-4 mx-auto rounded-3xl border-secondary' />
             </div>
 
-            <div className="flex flex-row">
-              <div className='flex flex-col'>
-                <h1 className='my-10 text-xl lg:text-4xl xl:text-5xl font-extrabold '>
+            <div className="flex flex-col md:flex-row mx-3">
+              <div className='flex flex-col my-3 mx-3'>
+                <h1 className='my-3 text-xl lg:text-4xl xl:text-5xl font-extrabold '>
                   <span className='text-primary'>STEP 3.</span> Chose the Health Care Facility</h1>
-                  <p className='text-md leading-normal lg:text-2xl xl:text-3xl font-semibold  max-w-[700px] text-justify'>
+                  <p className='mx-2 text-md leading-normal lg:text-2xl xl:text-3xl font-semibold text-justify'>
                     Once you decided on your location and type of care you need, select from the list of available facilities to see the statistical data on waiting times. 
                   </p>
               </div>
-              <div className='p-20 m-20'>image</div>
+              <img 
+                src='../assets/hospitalSelection.jpg'
+                className='w-[300px] h-[300px] mx-auto border-4 rounded-3xl border-primary' />
             </div>
     
           </div>

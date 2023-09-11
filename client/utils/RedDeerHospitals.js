@@ -2,7 +2,7 @@ const RedDeerHospitals = [
     {
         key: 'red1',
         name: 'Red Deer Regional Hospital',
-        info: 'This facility provides a range of healthcare services including a 24/7 emergency department. The Central Alberta Cancer Centre is located within this facility.',
+        info: 'This facility provides a range of healthcare services including a 24/7 emergency department.',
         img: 'https://www.reddeeradvocate.com/wp-content/uploads/2021/02/24344783_web1_191203-RDA-M-170208-RDA--RD-Hospital-.jpg',
         route: 'redDeerRegionalHospital',
     },

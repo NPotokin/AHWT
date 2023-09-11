@@ -2,7 +2,7 @@ const CalgaryUrgent = [
     {
         key: 'caUr1',
         name: 'Airdrie Community Health Centre',
-        info: 'Providing a wide range of health services to residents and families living in and around Airdrie, including 24 hour Urgent Care, Public Health, Home Care and Mental Health.',
+        info: 'Providing a wide range of health services to residents and families living in and around Airdrie.',
         img: 'https://content.betterimpact.com/files/agency/14020/airdrie-urgent-care.png',
         route: 'airdrieCommunityHealthCentre',
     },
