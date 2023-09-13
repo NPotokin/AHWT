@@ -13,11 +13,11 @@ const Hospital = (props) => {
           {props.hospitalName}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto">
+        <div className="pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto">
          
           {/*Contact Info */}
           <div className="flex flex-col rounded-3xl w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] border-primary border-4">
-            <div className='my-2 font-bold text-2xl xl:text-4xl text-secondary'>Contact Info</div>
+            <div className='my-2  font-bold text-2xl xl:text-4xl text-secondary'>Contact Info</div>
 
             <div className="flex flex-row mx-auto mt-2">
               <GoLocation className='text-secondary mx-2' size={25} />
@@ -46,7 +46,7 @@ const Hospital = (props) => {
           <div className="rounded-3xl w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] border-primary border-4">{props.hourGraph}</div>
           <div className="rounded-3xl w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] border-4 border-primary">{props.dayGraph}</div>
           <div className="rounded-3xl w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] border-4 border-primary">{props.weekGraph}</div>
-          <div className="rounded-3xl w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] border-4 border-primary ">{props.aboutInfo}</div>
+          <div className="rounded-3xl w-[300px] h-[300px] xl:w-[400px] xl:h-[400px] border-4 border-primary p-3 text-justify">{props.aboutInfo}</div>
         </div>
           
           
