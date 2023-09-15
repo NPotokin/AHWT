@@ -1,44 +1,61 @@
-import axios from 'axios'
+import axios from 'axios';
 import * as dotenv from 'dotenv';
+import Hospital from './models/HospitalModel.js';
 dotenv.config();
 
-const url = process.env.URL
+const url = process.env.URL;
 
 async function getDataAndTransformIt() {
+  try {
     const response = await axios.get(url);
-
     const dataSet = response.data;
-    const finalData = [];
-    
 
-// Loop through each city in the dataset
     for (const city in dataSet) {
-    if (dataSet.hasOwnProperty(city)) {
-        // Loop through the "Emergency" and "Urgent" arrays for each city
+      if (dataSet.hasOwnProperty(city)) {
         for (const category in dataSet[city]) {
-        if (dataSet[city].hasOwnProperty(category)) {
-            // Loop through the objects in the current category
-            dataSet[city][category].forEach((obj) => {
-            // Push each object into the finalObjects array
-            const extractedData = {
+          if (dataSet[city].hasOwnProperty(category)) {
+            for (const obj of dataSet[city][category]) {
+              const waitTime = obj.WaitTime;
+              const transformedWaitTime = parseFloat(
+                transformWaitTimeToMinutes(waitTime).toFixed(2)
+              );
+              const extractedData = {
                 Name: obj.Name,
-                WaitTime: obj.WaitTime
+                WaitTime: transformedWaitTime,
               };
-              // Push the new object into the preliminary array
-              finalData.push(extractedData);
-            
-            });
-        }   
+
+              try {
+                // Create a new document and await its creation
+                const dbInput = await Hospital.create(extractedData);
+                console.log('Document created:', dbInput);
+              } catch (error) {
+                console.error('Error creating document:', error);
+              }
+            }
+          }
         }
+      }
     }
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
 
-// Now, finalObjects contains all the extracted objects in an array
-    console.log(finalData);
-    
+function transformWaitTimeToMinutes(waitTimeString) {
+  const parts = waitTimeString.split(' ');
+  let totalMinutes = 0;
+
+  if (parts.length === 4 && parts[1] === 'hr' && parts[3] === 'min') {
+    const hours = parseInt(parts[0], 10);
+    const minutes = parseInt(parts[2], 10);
+    totalMinutes = hours + minutes/60;
+  }
+
+  return totalMinutes;
 }
 
-getDataAndTransformIt();
+// Set up an interval to call getDataAndTransformIt every 5 minutes (300,000 milliseconds)
+setInterval(getDataAndTransformIt, 360000);
 
 
 export default getDataAndTransformIt;

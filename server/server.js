@@ -1,8 +1,11 @@
 import express from 'express'
 import * as dotenv from 'dotenv';
 import getDataAndTransformIt from './apiReqester.js';
+import router from './routes/HospitalRouter.js';
+
 import mongoose from 'mongoose'
-dotenv.config();
+dotenv.config()
+
 
 const app = express()
 const port = process.env.PORT
@@ -17,22 +20,17 @@ try {
   process.exit(1);
 }
 
+app.use('/api', router)
+
+getDataAndTransformIt();
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Howdy!')
 })
 
-function scheduleGetDataAndTransformIt() {
-  
-  // Schedule the function to run every 5 minutes
-  const intervalInMinutes = 5;
-  setInterval(() => {
-    getDataAndTransformIt(); // Call the function at the specified interval
-  }, intervalInMinutes * 60 * 1000); // Convert minutes to milliseconds
-}
-// Start the scheduling when the server starts
-scheduleGetDataAndTransformIt();
+
 
 
 
